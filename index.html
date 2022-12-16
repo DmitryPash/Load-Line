@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Load line</h1>
+    <h2>Scroll me!</h2>
+
+    <div class="progress-bcg">
+        <div id="progress_line">
+        
+        </div>
+    </div>
+    
+
+    
+    <div class="heigh100">
+        
+    </div>
+
+
+
+
+    <style>
+        #progress_line {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            width: 0%;
+            height: 40px;
+            background: red;
+            z-index: 99;
+        }
+        .progress-bcg {
+             position: fixed;
+            left: 0;
+            top: 50%;
+            width: 100vw;
+            height: 40px;
+            background-color: orange;
+          
+        }
+        .heigh100 {
+            height: 3000px;
+        }
+    </style>
+    <script>
+        console.log('asd')
+        var line = document.getElementById('progress_line');
+        window.addEventListener('scroll', progressBar);
+            
+        function progressBar(e) {
+        var windowScroll = document.body.scrollTop || 
+        document.documentElement.scrollTop;
+        var windowHeight = document.documentElement.scrollHeight - 
+        document.documentElement.clientHeight; 
+        var width_progress_line = windowScroll / windowHeight * 100;
+        line.style.width = width_progress_line + '%';
+        }
+    </script>
+
+</body>
+</html>
